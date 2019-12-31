@@ -36,3 +36,21 @@ console.log("$" + avgBal)
 
 </script>
             
+
+<script id="ch0105/03">
+
+var x
+var sum = 0, counter = 0, avg = 0
+var sample_size = Number(prompt())
+
+for (var i = 0; i < sample_size; i++){
+    x = Number(prompt())
+    if(Math.abs(x) < 1000)
+        sum += x
+        counter++;
+}
+
+var avg = (sum/counter).toFixed(4)
+console.log(avg)
+
+</script>
