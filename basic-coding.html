@@ -1,19 +1,22 @@
-<script id="ch0104/01">
+<script id="ch0105/01">
 
-for(var i = 0; i<7; i++){
-    for(var j=0; j=<i; j++){
-    console.log("#");
+var age, avgAge
+var min_age = 15, max_age = 25, sum_age = 0, counter = 0
+var numbOfStudents = Number(prompt("输入学生人数（1到100）"))
+
+for(var i = 0; i < numbOfStudents; i++ ){
+    age = Number(prompt("输入学生年龄（15到25）"))
+    if(age >= min_age && age <= max_age){
+        sum_age += age;
+        counter++;
+    }
+    else{
+        alert("输入无效.")
     }
 }
-</script>
 
-<script id="ch0104/02">
+avgAge = (sum_age/counter).toFixed(2)
+console.log(avgAge)
 
-for(var i = 0; i<7; i++){
-    for(var j=0; j=<i; j++){
-    console.log("#");
-    }
-}
 </script>
-        
             
