@@ -19,4 +19,20 @@ avgAge = (sum_age/counter).toFixed(2)
 console.log(avgAge)
 
 </script>
+
+
+<script id="ch0105/02">
+
+var bal_this_month
+var numb_months = 12, sum_bal = 0, avgBal = 0
+
+for(var i = 0; i < numb_months; i++){
+    bal_this_month = Number(prompt('input month' + (i+1) ));
+    sum_bal += bal_this_month;  
+}
+
+avgBal = (sum_bal/numb_months).toFixed(2)
+console.log("$" + avgBal)
+
+</script>
             
