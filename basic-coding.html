@@ -113,3 +113,22 @@ for(var i = 0; i < numb_score; i++){
 console.log(max_score)
 </script>
 
+
+<script id="ch0105/06">
+// 06:整数序列的元素最大跨度值
+var numb_item = Number(prompt("输入序列个数:"))
+var max = 0, min = 1000
+
+for(var i = 0; i < numb_item; i++){
+    var xi = Number(prompt("输入第" + (i+1) + "个数"))
+    if(xi >= max){
+        max = xi
+    }
+    if(xi <= min){
+        min = xi
+    }
+}
+var max_distance = max - min
+console.log(max_distance)
+</script>
+
