@@ -54,3 +54,40 @@ var avg = (sum/counter).toFixed(4)
 console.log(avg)
 
 </script>
+
+<script id="ch0105/42">
+
+function rectangle(){
+    var height = Number(prompt("输入矩形的高："))
+    var width = Number(prompt("输入矩形的宽："))
+    var str = prompt("输入画矩形的符号：")
+    var style = prompt("输入0或1，0代表空心，1代表实心：")
+
+    var edge_line = ''
+    for(var i = 0; i < width; i++){
+        edge_line += str
+    }
+    console.log(edge_line)
+
+    var mid_lines = str
+    if (style == 1) {   //这里不能用“===”，style输入的是一个字符串
+        for(var i = 0; i < width - 2; i++){  //中间行第一个位置和最后一个位置始终打印符号
+            mid_lines += str
+        }
+    } else {
+        for(var i = 0; i < width - 2; i++){  
+            mid_lines += " "
+        }
+    }
+    mid_lines = mid_lines + str
+    
+    for(var j = 0; j < height - 2; j++){    
+        console.log(mid_lines)
+    }
+
+    console.log(edge_line)
+}
+rectangle()
+
+</script>
+
