@@ -1,23 +1,19 @@
 <script id="ch0105/01">
-
 var age
 var min_age = 15, max_age = 25, sum_age = 0, counter = 0, avgAge = 0
 var numbOfStudents = Number(prompt("输入学生人数（1到100）"))
 
 for(var i = 0; i < numbOfStudents; i++ ){
     age = Number(prompt("输入学生年龄（15到25）"))
-    if(age >= min_age && age <= max_age){
+    if (age >= min_age && age <= max_age) {
         sum_age += age;
         counter++;
-    }
-    else{
+    } else {
         alert("输入无效.")
     }
 }
-
 avgAge = (sum_age/counter).toFixed(2)
 console.log(avgAge)
-
 </script>
 
 
@@ -38,25 +34,23 @@ console.log("$" + avgBal)
             
 
 <script id="ch0105/03">
-
 var x
 var sum = 0, counter = 0, avg = 0
 var sample_size = Number(prompt())
 
 for (var i = 0; i < sample_size; i++){
     x = Number(prompt())
-    if(Math.abs(x) < 1000)
+    if(Math.abs(x) < 1000){
         sum += x
         counter++;
+    }
 }
 
 var avg = (sum/counter).toFixed(4)
 console.log(avg)
-
 </script>
 
 <script id="ch0105/42">
-
 function rectangle(){
     var height = Number(prompt("输入矩形的高："))
     var width = Number(prompt("输入矩形的宽："))
@@ -84,10 +78,22 @@ function rectangle(){
     for(var j = 0; j < height - 2; j++){    
         console.log(mid_lines)
     }
-
     console.log(edge_line)
 }
+    
 rectangle()
-
 </script>
 
+
+<script id="ch0105/04">
+//04:求整数的和与均值
+var sum = 0, avg = 0 
+
+var numb_int = Number(prompt("输入整数的数量："))
+for(var i = 0; i < numb_int; i++){
+    var xi = Number(prompt("输入整数，序号为" + (i+1) + ":"))
+    sum += xi
+}
+avg = (sum/numb_int).toFixed(5)
+console.log(sum + " " + avg)
+</script>
