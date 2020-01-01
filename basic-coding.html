@@ -133,7 +133,7 @@ console.log(max_distance)
 </script>
 
 
-<script id="ch0105/06">
+<script id="ch0105/07">
 //07:奥运奖牌计数
 var numb_days = Number(prompt("输入A国参与决赛的天数："))
 var numb_golden, numb_silver, numb_bronze
@@ -149,5 +149,20 @@ for(var i = 0; i < numb_days; i++){
 }
 sum_total = sum_golden + sum_silver + sum_bronze
 console.log(sum_golden + " " + sum_silver + " " + sum_bronze + " " + sum_total)
+</script>
+
+
+<script id="ch0105/08">
+// 08:多边形内角和
+var n_edges = Number(prompt("输入n边形的n的值："))
+var total_deg = (n_edges-2)*180
+var sum_deg = 0
+
+for(var i = 0; i < n_edges-1; i++){
+    var deg_angle = Number(prompt('输入第' + (i+1) + "个角的度数:"))
+    sum_deg += deg_angle
+}
+var deg_angle_left = total_deg - sum_deg
+console.log(deg_angle_left)
 </script>
 
