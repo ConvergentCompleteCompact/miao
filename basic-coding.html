@@ -194,3 +194,26 @@ console.log(sum)
 </script>
 
 
+<script id="ch0105/10">
+// 10:满足条件的数累加
+var m = Number(prompt("输入一个起始数m(1到1000)"))
+var n = Number(prompt("输入一个大于m的数n(1到1000)"))
+var d = 0, numb_terms = 0, sum = 0
+
+while(!(m % 17 === 0))
+    m++
+
+if (m <= n){
+    d = n - m 
+    if(d >= 17){
+       numb_terms = Math.floor(d / 17)
+       sum = (m + m + numb_terms*17)*(numb_terms+1)/2
+    } else {
+        sum = m
+    }
+} else {
+    sum = 0
+}
+console.log(sum)
+</script>
+
