@@ -132,3 +132,22 @@ var max_distance = max - min
 console.log(max_distance)
 </script>
 
+
+<script id="ch0105/06">
+//07:奥运奖牌计数
+var numb_days = Number(prompt("输入A国参与决赛的天数："))
+var numb_golden, numb_silver, numb_bronze
+var sum_golden = 0, sum_silver = 0, sum_bronze = 0, sum_total = 0 
+
+for(var i = 0; i < numb_days; i++){
+    numb_golden = Number(prompt('输入第' + (i+1) + '天金牌数量：'))
+    numb_silver = Number(prompt('输入第' + (i+1) + '天银牌数量：'))
+    numb_bronze = Number(prompt('输入第' + (i+1) + '天铜牌数量：'))
+    sum_golden += numb_golden 
+    sum_silver += numb_silver
+    sum_bronze += numb_bronze
+}
+sum_total = sum_golden + sum_silver + sum_bronze
+console.log(sum_golden + " " + sum_silver + " " + sum_bronze + " " + sum_total)
+</script>
+
