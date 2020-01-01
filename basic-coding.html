@@ -166,3 +166,31 @@ var deg_angle_left = total_deg - sum_deg
 console.log(deg_angle_left)
 </script>
 
+
+<script id="ch0105/09">
+// 09:奇数求和
+var numb_beg = Number(prompt("输入起始数m(0到300)"))
+var numb_end = Number(prompt("输入结束数n(0到300)"))
+var sum = 0, n = 0
+
+/*  等差数列求和公式:
+        Sn = (首项+末项)*项数/2
+    已知首项和末项、公差可求项数：
+        末项 = 首项 + (项数-1)公差
+*/
+if (numb_beg % 2 === 0){  // m为偶
+    numb_beg++
+    if(numb_end % 2 === 0){ // n为偶
+        numb_end--
+    } 
+} else {    // m为奇
+    if (numb_end % 2 === 0){ // n为偶
+        numb_end--
+    }
+}
+n = (numb_end - numb_beg)/2 + 1
+sum = (numb_beg + numb_end)*n/2
+console.log(sum)
+</script>
+
+
