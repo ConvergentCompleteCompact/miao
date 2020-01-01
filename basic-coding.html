@@ -97,3 +97,19 @@ for(var i = 0; i < numb_int; i++){
 avg = (sum/numb_int).toFixed(5)
 console.log(sum + " " + avg)
 </script>
+
+
+<script id="ch0105/05">
+// 05:最高的分数
+var numb_score = Number(prompt("输入参考人数（1到100之间）"))
+var max_score = 0
+
+for(var i = 0; i < numb_score; i++){
+    var xi = Number(prompt('输入第' + (i+1) + "个分数："))
+    if( xi >= max_score){
+        max_score = xi
+    }
+}
+console.log(max_score)
+</script>
+
