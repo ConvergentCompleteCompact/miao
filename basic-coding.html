@@ -217,3 +217,25 @@ if (m <= n){
 console.log(sum)
 </script>
 
+
+<script id="ch0105/11">
+// 11:整数的个数
+var numb_items = Number(prompt("输入正整数的个数k"))
+var counter_one = 0, counter_five = 0, counter_ten = 0
+var xi
+
+for(var i = 0; i < numb_items; i++){
+    xi = Number(prompt("输入第" + (i+1) + "个数"))
+    if(xi === 1){
+    counter_one++
+    } else if(xi === 5){
+        counter_five++
+    } else if(xi === 10){
+        counter_ten++
+    }
+}
+console.log(counter_one)
+console.log(counter_five)
+console.log(counter_ten)
+</script>
+
