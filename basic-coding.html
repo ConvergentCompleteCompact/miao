@@ -1,10 +1,10 @@
 <script id="ch0105/01">
 var age
 var min_age = 15, max_age = 25, sum_age = 0, counter = 0, avgAge = 0
-var numbOfStudents = Number(prompt("输入学生人数（1到100）"))
+var numbOfStudents = +prompt("输入学生人数（1到100）")
 
 for(let i = 0; i < numbOfStudents; i++ ){
-    age = Number(prompt("输入学生年龄（15到25）"))
+    age = +prompt("输入学生年龄（15到25）")
     if (age >= min_age && age <= max_age) {
         sum_age += age;
         counter++;
@@ -18,11 +18,11 @@ console.log(avgAge)
 
 
 <script id="ch0105/02">
-
+//02:财务管理
 var bal_this_month, sum_bal = 0, avgBal = 0
 const numb_months = 12
 
-for(let i = 0; i < numb_months; i++){
+for (let i = 0; i < numb_months; i++){
     bal_this_month = Number(prompt('input month' + (i+1) ));
     sum_bal += bal_this_month;  
 }
@@ -33,26 +33,25 @@ console.log("$" + avgBal)
             
 
 <script id="ch0105/03">
-var x
+//03:均值
 var sum = 0, counter = 0, avg = 0
-var sample_size = Number(prompt())
+var sample_size = +prompt()
 
 for (let i = 0; i < sample_size; i++){
-    x = Number(prompt())
+    let x = +prompt()
     if(Math.abs(x) < 1000){
         sum += x
         counter++;
     }
 }
-
 var avg = (sum/counter).toFixed(4)
 console.log(avg)
 </script>
 
 <script id="ch0105/42">
 function rectangle(){
-    var height = Number(prompt("输入矩形的高："))
-    var width = Number(prompt("输入矩形的宽："))
+    var height = +prompt("输入矩形的高：")
+    var width = +prompt("输入矩形的宽：")
     var str = prompt("输入画矩形的符号：")
     var style = prompt("输入0或1，0代表空心，1代表实心：")
 
@@ -87,10 +86,10 @@ rectangle()
 <script id="ch0105/04">
 //04:求整数的和与均值
 var sum = 0, avg = 0 
-var numb_int = Number(prompt("输入整数的数量："))
+var numb_int = +prompt("输入整数的数量：")
 
 for(let i = 0; i < numb_int; i++){
-    let xi = Number(prompt("输入整数，序号为" + (i+1) + ":"))
+    let xi = +prompt("输入整数，序号为" + (i+1) + ":")
     sum += xi
 }
 avg = (sum/numb_int).toFixed(5)
@@ -100,11 +99,11 @@ console.log(sum + " " + avg)
 
 <script id="ch0105/05">
 // 05:最高的分数
-var numb_score = Number(prompt("输入参考人数（1到100之间）"))
+var numb_score = +prompt("输入参考人数（1到100之间）")
 var max_score = 0
 
 for(let i = 0; i < numb_score; i++){
-    let xi = Number(prompt('输入第' + (i+1) + "个分数："))
+    let xi = +prompt('输入第' + (i+1) + "个分数：")
     if( xi >= max_score){
         max_score = xi
     }
@@ -115,11 +114,11 @@ console.log(max_score)
 
 <script id="ch0105/06">
 // 06:整数序列的元素最大跨度值
-var numb_item = Number(prompt("输入序列个数:"))
-var max = 0, min = 1000
+var numb_item = +prompt("输入序列个数:")
+var max = -Infinity, min = 1000
 
 for(let i = 0; i < numb_item; i++){
-    let xi = Number(prompt("输入第" + (i+1) + "个数"))
+    let xi = +prompt("输入第" + (i+1) + "个数")
     if(xi >= max){
         max = xi
     }
@@ -134,14 +133,14 @@ console.log(max_distance)
 
 <script id="ch0105/07">
 //07:奥运奖牌计数
-var numb_days = Number(prompt("输入A国参与决赛的天数："))
+var numb_days = +prompt("输入A国参与决赛的天数：")
 var numb_golden, numb_silver, numb_bronze
 var sum_golden = 0, sum_silver = 0, sum_bronze = 0, sum_total = 0 
 
 for(let i = 0; i < numb_days; i++){
-    numb_golden = Number(prompt('输入第' + (i+1) + '天金牌数量：'))
-    numb_silver = Number(prompt('输入第' + (i+1) + '天银牌数量：'))
-    numb_bronze = Number(prompt('输入第' + (i+1) + '天铜牌数量：'))
+    numb_golden = +prompt('输入第' + (i+1) + '天金牌数量：')
+    numb_silver = +prompt('输入第' + (i+1) + '天银牌数量：')
+    numb_bronze = +prompt('输入第' + (i+1) + '天铜牌数量：')
     sum_golden += numb_golden 
     sum_silver += numb_silver
     sum_bronze += numb_bronze
@@ -153,12 +152,12 @@ console.log(sum_golden + " " + sum_silver + " " + sum_bronze + " " + sum_total)
 
 <script id="ch0105/08">
 // 08:多边形内角和
-var n_edges = Number(prompt("输入n边形的n的值："))
+var n_edges = +prompt("输入n边形的n的值：")
 var total_deg = (n_edges-2)*180
 var sum_deg = 0
 
 for(let i = 0; i < n_edges-1; i++){
-    var deg_angle = Number(prompt('输入第' + (i+1) + "个角的度数:"))
+    let deg_angle = +prompt('输入第' + (i+1) + "个角的度数:")
     sum_deg += deg_angle
 }
 var deg_angle_left = total_deg - sum_deg
@@ -195,13 +194,11 @@ console.log(sum)
 
 <script id="ch0105/10">
 // 10:满足条件的数累加
-var m = Number(prompt("输入一个起始数m(1到1000)"))
-var n = Number(prompt("输入一个大于m的数n(1到1000)"))
+var m = +prompt("输入一个起始数m(1到1000)")
+var n = +prompt("输入一个大于m的数n(1到1000)")
 var d = 0, numb_terms = 0, sum = 0
 
-while(!(m % 17 === 0))
-    m++
-
+m = Math.ceil(m / 17) * 17
 if (m <= n){
     d = n - m 
     if(d >= 17){
@@ -219,16 +216,18 @@ console.log(sum)
 
 <script id="ch0105/11">
 // 11:整数的个数
-var numb_items = Number(prompt("输入正整数的个数k"))
+var numb_items = +prompt("输入正整数的个数k")
 var counter_one = 0, counter_five = 0, counter_ten = 0
 
-for(let i = 0; i < numb_items; i++){
-    let xi = Number(prompt("输入第" + (i+1) + "个数"))
-    if(xi === 1){
+for(let i = 0; i < numb_items; i++) {
+    let xi = +prompt("输入第" + (i+1) + "个数")
+    if (xi === 1) {
     counter_one++
-    } else if(xi === 5){
+    } 
+    if (xi === 5) {
         counter_five++
-    } else if(xi === 10){
+    } 
+    if (xi === 10) {
         counter_ten++
     }
 }
