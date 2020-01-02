@@ -374,16 +374,15 @@ console.log(Math.ceil(total_time))
 var initial_height = +prompt('输入起始高度:')
 const iteration = 10
 var total_distance = initial_height
-
-for (let i = 0; i < iteration; i++) {
+    
+for (let i = 0; i < iteration - 1; i++) { //前九次是上下
     initial_height /= 2
     var iteration_height = initial_height
     total_distance += (iteration_height)*2
-}
+    }
 console.log(total_distance)
-console.log(iteration_height)
+console.log(iteration_height/2)
 </script>
-
 
 <script id="ch0105/21">
 // 21:角谷猜想
