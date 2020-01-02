@@ -239,12 +239,12 @@ console.log(counter_ten)
 
 <script id="ch0105/12">
 // 12:与指定数字相同的数的个数
-var numb_terms = Number(prompt('输入整数序列的长度'))
-var numb = Number(prompt('输入一个整数：'))
+var numb_terms = +prompt('输入整数序列的长度')
+var numb = +prompt('输入一个整数：')
 var counter = 0 
 
 for(let i=0; i < numb_terms; i++){
-    let xi = Number(prompt('输入第' + (i+1) + '个数：'))
+    let xi = +prompt('输入第' + (i+1) + '个数：')
     if (xi === numb){
         counter++
     }
@@ -255,13 +255,13 @@ console.log(counter)
 
 <script id="ch0105/13">
 // 13:乘方计算
-var base = Number(prompt('输入底数'))
-var power = Number(prompt('输入幂次:'))
+var base = +prompt('输入底数')
+var power = +prompt('输入幂次:')
 var result_range = 1000000
 var result = 1
 
 if ( power !== 0){
-    for( var i=0; i < power; i++){
+    for( let i=0; i < power; i++){
         result *= base 
     }
 }
@@ -272,13 +272,13 @@ if (result < result_range)
 
 <script id="ch0105/14">
 // 14:人口增长问题
-var base_numb = Number(prompt('输入人口基数(以亿为单位，1到100)'))
-var years = Number(prompt('输入年数(1到100)：'))
+var base_numb = +prompt('输入人口基数(以亿为单位，1到100)')
+var years = +prompt('输入年数(1到100)：')
 var result = base_numb
 const rate = 0.001
 
-for(var i=0; i < years; i++){
-    result *= (1 + rate) 
+for(let i=0; i < years; i++){
+    result *= (1 + rate)        
 }
 console.log(result.toFixed(4))
 </script>
@@ -286,9 +286,9 @@ console.log(result.toFixed(4))
 
 <script id="ch0105/15">
 // 15:银行利息
-var compound_rate = Number(prompt('输入复合年利率（0到20之间的整数）'))
-var amount_current = Number(prompt('输入金钱数量（100到1,000,000之间的整数）'))
-var years = Number(prompt('输入投资年数(范围0到400):'))
+var compound_rate = +prompt('输入复合年利率（0到20之间的整数）')
+var amount_current = +prompt('输入金钱数量（100到1,000,000之间的整数）')
+var years = +prompt('输入投资年数(范围0到400):')
 var result = amount_current
 
 if (years !== 0){
@@ -296,16 +296,17 @@ if (years !== 0){
         result *= (1+compound_rate/100)
     }
 }
-console.log(Math.floor(result))
+console.log(Math.trunc(result))
 </script>
 
 
 <script id="ch0105/16">
 // 16:买房子
-var annual_income = Number(prompt('输入年薪:'))
-const house_price = 200
-const inflation_rate = Number(prompt('输入房价增长率:'))
-var counter = 1, sum_income = annual_income, sum_house_price = house_price
+var annual_income = +prompt('输入年薪:')
+const house_price_beg = 200
+const inflation_rate = +prompt('输入房价增长率:')
+var counter = 1, sum_income = annual_income, sum_house_price = house_price_beg
+
 
 while (sum_income < sum_house_price){
     sum_income = annual_income*(++counter)
@@ -317,7 +318,7 @@ console.log(counter)
 
 <script id="ch0105/17">
 // 17:菲波那契数列
-var n = Number(prompt('输入斐波那契数列的序号：'))
+var n = +prompt('输入斐波那契数列的序号：')
 
 function fib(n){    //  recursion
     if (n >= 3){    //  recursive case
@@ -332,14 +333,14 @@ console.log(fib(n))
 
 <script id="ch0105/18">
 // 18:鸡尾酒疗法
-var numb = Number(prompt('输入治疗方法的总数:'))
-var numb_total = Number(prompt('输入鸡尾酒疗法总病例数:'))
-var numb_valid = Number(prompt('输入鸡尾酒疗法有效病例数:'))
+var numb = +prompt('输入治疗方法的总数:')
+var numb_total = +prompt('输入鸡尾酒疗法总病例数:')
+var numb_valid = +prompt('输入鸡尾酒疗法有效病例数:')
 var benchmark = (numb_valid/numb_total)*100
 
 for(var i=0; i < numb-1; i++){
-    let x_total = Number(prompt('输入第' + (i+1) + '疗法总病例数:'))
-    let x_valid = Number(prompt('输入第' + (i+1) + '疗法有效病例数:'))
+    let x_total = +prompt('输入第' + (i+1) + '疗法总病例数:')
+    let x_valid = +prompt('输入第' + (i+1) + '疗法有效病例数:')
     let dif = (x_valid/x_total)*100 - benchmark
     if (dif > 5){
         console.log('better')
@@ -353,14 +354,14 @@ for(var i=0; i < numb-1; i++){
 
 <script id="ch0105/19">
 // 19:救援
-var numb_houses = Number(prompt('输入屋顶的数量：'))
+var numb_houses = +prompt('输入屋顶的数量：')
 var total_time = 0
 const velocity = 50
 
 for(var i=0; i < numb_houses; i++){
-    let x_axis = Number(prompt('输入相对于大本营（原点）屋顶的横坐标（单位：米）'))
-    let y_axis = Number(prompt('输入相对于大本营（原点）屋顶的纵坐标（单位：米）'))
-    let numb_ppl = Number(prompt('输入该屋顶营救人数:'))
+    let x_axis = +prompt('输入相对于大本营（原点）屋顶的横坐标（单位：米）')
+    let y_axis = +prompt('输入相对于大本营（原点）屋顶的纵坐标（单位：米）')
+    let numb_ppl = +prompt('输入该屋顶营救人数:')
     let distance = Math.sqrt(x_axis*x_axis + y_axis*y_axis)     //屋顶到大本营的距离
     let time_driving = (distance/velocity)*2                    //路上往返时间，随距离变化
     let time_saving = numb_ppl*1 + numb_ppl*0.5                 //上船下船时间，随人数变化
@@ -370,7 +371,7 @@ console.log(Math.ceil(total_time))
 </script>
 
 <script id="ch0105/20">
-var initial_height = Number(prompt('输入起始高度:'))
+var initial_height = +prompt('输入起始高度:')
 const iteration = 10
 var total_distance = initial_height
 
@@ -386,7 +387,7 @@ console.log(iteration_height)
 
 <script id="ch0105/21">
 // 21:角谷猜想
-var x = Number(prompt('输入一个正整数'))
+var x = +prompt('输入一个正整数')
 
 while (x !== 1) {
     let x_before = x
