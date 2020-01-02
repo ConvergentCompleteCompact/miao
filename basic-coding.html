@@ -286,4 +286,35 @@ console.log(result.toFixed(4))
 </script>
 
 
+<script id="ch0105/15">
+// 15:银行利息
+var compound_rate = Number(prompt('输入复合年利率（0到20之间的整数）'))
+var amount_current = Number(prompt('输入金钱数量（100到1,000,000之间的整数）'))
+var years = Number(prompt('输入投资年数(范围0到400):'))
+var result = amount_current
+
+if (years !== 0){
+    for (var i=0; i < years; i++){
+        result *= (1+compound_rate/100)
+    }
+}
+console.log(result.toFixed(0))
+</script>
+
+
+<script id="ch0105/16">
+// 16:买房子
+var annual_income = Number(prompt('输入年薪:'))
+var house_price = 200
+var inflation_rate = Number(prompt('输入房价增长率:'))
+var counter = 1, sum_income = annual_income, sum_house_price = house_price
+
+while (sum_income < sum_house_price){
+    sum_income = annual_income*(++counter)
+    sum_house_price *= (1+inflation_rate/100)   
+}
+console.log(counter)
+</script>
+
+
 
