@@ -317,4 +317,19 @@ console.log(counter)
 </script>
 
 
+<script id="ch0105/17">
+// 17:菲波那契数列
+var n = Number(prompt('输入斐波那契数列的序号：'))
+
+function fib(n){    //  recursion
+    if (n >= 3){    //  recursive case
+        return fib(n-1) + fib(n-2)
+    } else {        //  base case 
+        return 1
+    }
+}
+console.log(fib(n))
+</script>
+
+
 
