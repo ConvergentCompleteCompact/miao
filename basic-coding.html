@@ -3,7 +3,7 @@ var age
 var min_age = 15, max_age = 25, sum_age = 0, counter = 0, avgAge = 0
 var numbOfStudents = Number(prompt("输入学生人数（1到100）"))
 
-for(var i = 0; i < numbOfStudents; i++ ){
+for(let i = 0; i < numbOfStudents; i++ ){
     age = Number(prompt("输入学生年龄（15到25）"))
     if (age >= min_age && age <= max_age) {
         sum_age += age;
@@ -19,17 +19,16 @@ console.log(avgAge)
 
 <script id="ch0105/02">
 
-var bal_this_month
-var numb_months = 12, sum_bal = 0, avgBal = 0
+var bal_this_month, sum_bal = 0, avgBal = 0
+const numb_months = 12
 
-for(var i = 0; i < numb_months; i++){
+for(let i = 0; i < numb_months; i++){
     bal_this_month = Number(prompt('input month' + (i+1) ));
     sum_bal += bal_this_month;  
 }
 
 avgBal = (sum_bal/numb_months).toFixed(2)
 console.log("$" + avgBal)
-
 </script>
             
 
@@ -38,7 +37,7 @@ var x
 var sum = 0, counter = 0, avg = 0
 var sample_size = Number(prompt())
 
-for (var i = 0; i < sample_size; i++){
+for (let i = 0; i < sample_size; i++){
     x = Number(prompt())
     if(Math.abs(x) < 1000){
         sum += x
@@ -88,10 +87,10 @@ rectangle()
 <script id="ch0105/04">
 //04:求整数的和与均值
 var sum = 0, avg = 0 
-
 var numb_int = Number(prompt("输入整数的数量："))
-for(var i = 0; i < numb_int; i++){
-    var xi = Number(prompt("输入整数，序号为" + (i+1) + ":"))
+
+for(let i = 0; i < numb_int; i++){
+    let xi = Number(prompt("输入整数，序号为" + (i+1) + ":"))
     sum += xi
 }
 avg = (sum/numb_int).toFixed(5)
@@ -104,8 +103,8 @@ console.log(sum + " " + avg)
 var numb_score = Number(prompt("输入参考人数（1到100之间）"))
 var max_score = 0
 
-for(var i = 0; i < numb_score; i++){
-    var xi = Number(prompt('输入第' + (i+1) + "个分数："))
+for(let i = 0; i < numb_score; i++){
+    let xi = Number(prompt('输入第' + (i+1) + "个分数："))
     if( xi >= max_score){
         max_score = xi
     }
@@ -119,8 +118,8 @@ console.log(max_score)
 var numb_item = Number(prompt("输入序列个数:"))
 var max = 0, min = 1000
 
-for(var i = 0; i < numb_item; i++){
-    var xi = Number(prompt("输入第" + (i+1) + "个数"))
+for(let i = 0; i < numb_item; i++){
+    let xi = Number(prompt("输入第" + (i+1) + "个数"))
     if(xi >= max){
         max = xi
     }
@@ -139,7 +138,7 @@ var numb_days = Number(prompt("输入A国参与决赛的天数："))
 var numb_golden, numb_silver, numb_bronze
 var sum_golden = 0, sum_silver = 0, sum_bronze = 0, sum_total = 0 
 
-for(var i = 0; i < numb_days; i++){
+for(let i = 0; i < numb_days; i++){
     numb_golden = Number(prompt('输入第' + (i+1) + '天金牌数量：'))
     numb_silver = Number(prompt('输入第' + (i+1) + '天银牌数量：'))
     numb_bronze = Number(prompt('输入第' + (i+1) + '天铜牌数量：'))
@@ -158,7 +157,7 @@ var n_edges = Number(prompt("输入n边形的n的值："))
 var total_deg = (n_edges-2)*180
 var sum_deg = 0
 
-for(var i = 0; i < n_edges-1; i++){
+for(let i = 0; i < n_edges-1; i++){
     var deg_angle = Number(prompt('输入第' + (i+1) + "个角的度数:"))
     sum_deg += deg_angle
 }
@@ -222,10 +221,9 @@ console.log(sum)
 // 11:整数的个数
 var numb_items = Number(prompt("输入正整数的个数k"))
 var counter_one = 0, counter_five = 0, counter_ten = 0
-var xi
 
-for(var i = 0; i < numb_items; i++){
-    xi = Number(prompt("输入第" + (i+1) + "个数"))
+for(let i = 0; i < numb_items; i++){
+    let xi = Number(prompt("输入第" + (i+1) + "个数"))
     if(xi === 1){
     counter_one++
     } else if(xi === 5){
@@ -246,8 +244,8 @@ var numb_terms = Number(prompt('输入整数序列的长度'))
 var numb = Number(prompt('输入一个整数：'))
 var counter = 0 
 
-for(var i=0; i < numb_terms; i++){
-    var xi = Number(prompt('输入第' + (i+1) + '个数：'))
+for(let i=0; i < numb_terms; i++){
+    let xi = Number(prompt('输入第' + (i+1) + '个数：'))
     if (xi === numb){
         counter++
     }
@@ -277,7 +275,8 @@ if (result < result_range)
 // 14:人口增长问题
 var base_numb = Number(prompt('输入人口基数(以亿为单位，1到100)'))
 var years = Number(prompt('输入年数(1到100)：'))
-var result = base_numb, rate = 0.001
+var result = base_numb
+const rate = 0.001
 
 for(var i=0; i < years; i++){
     result *= (1 + rate) 
@@ -294,7 +293,7 @@ var years = Number(prompt('输入投资年数(范围0到400):'))
 var result = amount_current
 
 if (years !== 0){
-    for (var i=0; i < years; i++){
+    for (let i=0; i < years; i++){
         result *= (1+compound_rate/100)
     }
 }
@@ -305,8 +304,8 @@ console.log(Math.floor(result))
 <script id="ch0105/16">
 // 16:买房子
 var annual_income = Number(prompt('输入年薪:'))
-var house_price = 200
-var inflation_rate = Number(prompt('输入房价增长率:'))
+const house_price = 200
+const inflation_rate = Number(prompt('输入房价增长率:'))
 var counter = 1, sum_income = annual_income, sum_house_price = house_price
 
 while (sum_income < sum_house_price){
@@ -340,9 +339,9 @@ var numb_valid = Number(prompt('输入鸡尾酒疗法有效病例数:'))
 var benchmark = (numb_valid/numb_total)*100
 
 for(var i=0; i < numb-1; i++){
-    var x_total = Number(prompt('输入第' + (i+1) + '疗法总病例数:'))
-    var x_valid = Number(prompt('输入第' + (i+1) + '疗法有效病例数:'))
-    var dif = (x_valid/x_total)*100 - benchmark
+    let x_total = Number(prompt('输入第' + (i+1) + '疗法总病例数:'))
+    let x_valid = Number(prompt('输入第' + (i+1) + '疗法有效病例数:'))
+    let dif = (x_valid/x_total)*100 - benchmark
     if (dif > 5){
         console.log('better')
     } else if ( dif < -5){
@@ -356,15 +355,16 @@ for(var i=0; i < numb-1; i++){
 <script id="ch0105/19">
 // 19:救援
 var numb_houses = Number(prompt('输入屋顶的数量：'))
-var total_time = 0, velocity = 50
+var total_time = 0
+const velocity = 50
 
 for(var i=0; i < numb_houses; i++){
-    var x_axis = Number(prompt('输入相对于大本营（原点）屋顶的横坐标（单位：米）'))
-    var y_axis = Number(prompt('输入相对于大本营（原点）屋顶的纵坐标（单位：米）'))
-    var numb_ppl = Number(prompt('输入该屋顶营救人数:'))
-    var distance = Math.sqrt(x_axis*x_axis + y_axis*y_axis)     //屋顶到大本营的距离
-    var time_driving = (distance/velocity)*2                    //路上往返时间，随距离变化
-    var time_saving = numb_ppl*1 + numb_ppl*0.5                 //上船下船时间，随人数变化
+    let x_axis = Number(prompt('输入相对于大本营（原点）屋顶的横坐标（单位：米）'))
+    let y_axis = Number(prompt('输入相对于大本营（原点）屋顶的纵坐标（单位：米）'))
+    let numb_ppl = Number(prompt('输入该屋顶营救人数:'))
+    let distance = Math.sqrt(x_axis*x_axis + y_axis*y_axis)     //屋顶到大本营的距离
+    let time_driving = (distance/velocity)*2                    //路上往返时间，随距离变化
+    let time_saving = numb_ppl*1 + numb_ppl*0.5                 //上船下船时间，随人数变化
     total_time += (time_saving + time_driving)
 }
 console.log(Math.ceil(total_time))
@@ -372,10 +372,10 @@ console.log(Math.ceil(total_time))
 
 <script id="ch0105/20">
 var initial_height = Number(prompt('输入起始高度:'))
-var iteration = 10
+const iteration = 10
 var total_distance = initial_height
 
-for (var i = 0; i < iteration; i++) {
+for (let i = 0; i < iteration; i++) {
     initial_height /= 2
     var iteration_height = initial_height
     total_distance += (iteration_height)*2
@@ -390,7 +390,7 @@ console.log(iteration_height)
 var x = Number(prompt('输入一个正整数'))
 
 while (x !== 1) {
-    var x_before = x
+    let x_before = x
     if (x % 2 === 1){
         x = x * 3 + 1
         console.log(x_before + "*" + '3' + "+" + '1' + "=" + x)
