@@ -263,11 +263,26 @@ var power = Number(prompt('输入幂次:'))
 var result_range = 1000000
 var result = 1
 
-for( var i=0; i < power; i++){
-    result *= base 
+if ( power !== 0){
+    for( var i=0; i < power; i++){
+        result *= base 
+    }
 }
 if (result < result_range)
     console.log(result)
+</script>
+
+
+<script id="ch0105/14">
+// 14:人口增长问题
+var base_numb = Number(prompt('输入人口基数(以亿为单位，1到100)'))
+var years = Number(prompt('输入年数(1到100)：'))
+var result = base_numb, rate = 0.001
+
+for(var i=0; i < years; i++){
+    result *= (1 + rate) 
+}
+console.log(result.toFixed(4))
 </script>
 
 
