@@ -384,3 +384,21 @@ console.log(total_distance)
 console.log(iteration_height)
 </script>
 
+
+<script id="ch0105/20">
+// 21:角谷猜想
+var x = Number(prompt('输入一个正整数'))
+
+while (x !== 1) {
+    var x_before = x
+    if (x % 2 === 1){
+        x = x * 3 + 1
+        console.log(x_before + "*" + '3' + "+" + '1' + "=" + x)
+    } else {
+        x = x / 2
+        console.log(x_before + '/' + '2' + '=' + x)
+    }
+}
+console.log('End')
+</script>
+
