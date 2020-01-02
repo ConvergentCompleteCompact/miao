@@ -332,4 +332,55 @@ console.log(fib(n))
 </script>
 
 
+<script id="ch0105/18">
+// 18:鸡尾酒疗法
+var numb = Number(prompt('输入治疗方法的总数:'))
+var numb_total = Number(prompt('输入鸡尾酒疗法总病例数:'))
+var numb_valid = Number(prompt('输入鸡尾酒疗法有效病例数:'))
+var benchmark = (numb_valid/numb_total)*100
+
+for(var i=0; i < numb-1; i++){
+    var x_total = Number(prompt('输入第' + (i+1) + '疗法总病例数:'))
+    var x_valid = Number(prompt('输入第' + (i+1) + '疗法有效病例数:'))
+    var dif = (x_valid/x_total)*100 - benchmark
+    if (dif > 5){
+        console.log('better')
+    } else if ( dif < -5){
+        console.log('worse')
+    } else {
+        console.log('same')
+    }
+}
+</script>
+
+<script id="ch0105/19">
+// 19:救援
+var numb_houses = Number(prompt('输入屋顶的数量：'))
+var total_time = 0, velocity = 50
+
+for(var i=0; i < numb_houses; i++){
+    var x_axis = Number(prompt('输入相对于大本营（原点）屋顶的横坐标（单位：米）'))
+    var y_axis = Number(prompt('输入相对于大本营（原点）屋顶的纵坐标（单位：米）'))
+    var numb_ppl = Number(prompt('输入该屋顶营救人数:'))
+    var distance = Math.sqrt(x_axis*x_axis + y_axis*y_axis)     //屋顶到大本营的距离
+    var time_driving = (distance/velocity)*2                    //路上往返时间，随距离变化
+    var time_saving = numb_ppl*1 + numb_ppl*0.5                 //上船下船时间，随人数变化
+    total_time += (time_saving + time_driving)
+}
+console.log(Math.ceil(total_time))
+</script>
+
+<script id="ch0105/20">
+var initial_height = Number(prompt('输入起始高度:'))
+var iteration = 10
+var total_distance = initial_height
+
+for (var i = 0; i < iteration; i++) {
+    initial_height /= 2
+    var iteration_height = initial_height
+    total_distance += (iteration_height)*2
+}
+console.log(total_distance)
+console.log(iteration_height)
+</script>
 
