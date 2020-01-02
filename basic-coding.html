@@ -239,3 +239,20 @@ console.log(counter_five)
 console.log(counter_ten)
 </script>
 
+
+<script id="ch0105/12">
+// 12:与指定数字相同的数的个数
+var numb_terms = Number(prompt('输入整数序列的长度'))
+var numb = Number(prompt('输入一个整数：'))
+var counter = 0 
+
+for(var i=0; i < numb_terms; i++){
+    var xi = Number(prompt('输入第' + (i+1) + '个数：'))
+    if (xi === numb){
+        counter++
+    }
+}
+console.log(counter)
+</script>
+
+
