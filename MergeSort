@@ -1,0 +1,46 @@
+<script>
+    function mergeSort(ary) {
+        if (ary.length === 0 || ary.length === 1) { //ary为空数组或一个元素
+            return ary;  
+        }
+
+        var mid = ary.length >> 1               // ?安全取中，当数组很大时候无法除2
+        var left = ary.slice(0, mid)            //exclude第二个序列
+        var right = ary.slice(mid)              //第二个元素不写表示default最后
+        var left_sorted = mergeSort(left)       //设想mergeSort函数能够将left排序
+        var right_sorted = mergeSort(right)
+
+        //合并left_sorted数组和right_sorted数组
+        var i = 0   //指向左数列0号位置
+        var j = 0   //指向右数列0号位置
+        var k = 0   //指向输入数组的0号位置
+
+        while (i < left_sorted.length && j < right_sorted.length) {
+            if (left_sorted[i] <= right_sorted[j]) {
+                ary[k] = left_sorted[i];
+                i++;
+            } else {
+                ary[k] = right_sorted[j];
+                j++;
+            }
+            k++;
+        }
+
+        //极端情况：左数列的最大元素小于右数列的最小元素, 此时 i = left_sorted.length, j = 0
+        while (j < right_sorted.length) {
+            ary[k] = right_sorted[j];
+            j++;
+            k++;
+        }
+
+        //极端情况：右数列的最大元素小于左数列的最小元素, 此时 i = 0, j = right_sorted.length
+        while (i < left_sorted.length) {
+            ary[k] = left_sorted[i];
+            i++;
+            k++;
+        }
+
+        return ary;     //记得返回排好序的数组，每次调用再原input数组上排序
+    } 
+
+</script>
