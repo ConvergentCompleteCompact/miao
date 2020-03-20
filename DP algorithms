@@ -1,0 +1,36 @@
+<script> 
+//最原始的recursion版本的递归
+function fibNaive(n){
+    if (n <= 2) return 1;
+    else result = fib(n-1) + fib(n-2);
+    return result;
+}
+
+//Memoize DP algorithm
+memo = {};
+function fibMemoize(n) {
+    //在寻找fib(n-1)和fib(n-2)时，先要搜寻memo字典里是否已经存在该值
+    if (memo.hasOwnProperty(n)) return memo[n]; 
+
+    //如果字典里面没有，进行添加
+    if (n <= 2) return 1;
+    else {
+        result = fib(n-1) + fib(n-2);
+        memo[n] = result;   //将计算结果保存至memo字典里
+    }
+    return result;
+}
+
+//bottom-up DP algorithm
+function fibBotUp(n){
+    memoNew = {};
+    for (let i = 1; i <= n; i++) {
+        if (i <= 2) {
+            memoNew[i] = 1;
+        } else {
+            memoNew[i] = memoNew[i-1] + memoNew[i-2];
+        }
+    }
+    return memoNew[n];
+}
+</script>
