@@ -54,6 +54,7 @@
             if (isNaN(ary[i])) {continue}
             ary_output.push(ary[i]);
         }
+        return ary_output;
     },
 
 
