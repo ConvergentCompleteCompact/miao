@@ -171,7 +171,7 @@
             }
             if (ary[i] === value) { return i;}
         }
-           return -1；
+           return -1
      },
 
      //获得一个数组除去最后一个元素的新数组
