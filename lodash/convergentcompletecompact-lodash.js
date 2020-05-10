@@ -167,14 +167,11 @@
      indexOf: function(ary, value, fromIndex = 0) {
         for (let i = fromIndex; i < ary.length; i++) {
             if (ary[i] !== ary[i]) {
-                if (value !== value) {
-                   return i;
-                }
+                if (value !== value) { return i;}
             }
-            if (ary[i] === value) {
-                return i;
-            }
+            if (ary[i] === value) { return i;}
         }
+           return -1；
      },
 
      //获得一个数组除去最后一个元素的新数组
@@ -185,6 +182,39 @@
          }
          return ary_output;
      },
+  
+     join: function(ary, separator) {
+        var str_output = '';
+        for (let i = 0; i < ary.length - 1; i++) {
+            str_output += ary[i] + separator;
+        }
+        return str_output + ary[ary.length - 1];
+     },
+
+     last: function(ary) {
+        return ary[ary.length - 1];
+     },
+
+    /** 从右往左找目标值在数组中的下标
+     *  @param ary {Array} 检查的数组
+     *  @param value 寻找的value
+     *  @param fromIndex {Number} 开始寻找的index
+     *  @returns 目标value所在的index，如果找不不到返回-1
+     */
+     lastIndexOf: function(ary, value, fromIndex = ary.length - 1) {
+         for (let i = fromIndex; i >= 0; i--) {
+             if (ary[i] !== ary[i]) {
+                 if (value !== value) return i;
+             }
+             if (ary[i] === value) return i;
+         }
+         return -1;
+     },
+
+     nth: function(ary, n=0) {
+         if (n >= 0) return ary[n];
+         return ary[ary.length + n];
+     }
 
   
   
