@@ -166,6 +166,11 @@
      */
      indexOf: function(ary, value, fromIndex = 0) {
         for (let i = fromIndex; i < ary.length; i++) {
+            if (ary[i] !== ary[i]) {
+                if (value !== value) {
+                   return i;
+                }
+            }
             if (ary[i] === value) {
                 return i;
             }
