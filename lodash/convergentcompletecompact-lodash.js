@@ -14,19 +14,15 @@
 * 文件中的变量名全小写: var foobar = {chunk: function(){}}
 */
 
+ var convergentcompletecompact = {
 
-var convergentcompletecompact = {
-
-  
- 
     /** Creates an array of elements split into groups the length of size.
      *  @param ary {Array} 为输入的数组
      *  @param size {Number} 为可选参数，是输出数组中每个chunk的长度（末尾不够指定长度的chunk包含剩下的元素）
      *  @returns 一个由chunks组成的新数组
-     * 
-     * 
      */
-    chunk: function(ary, size = 1) {
+   
+    chunk: function(ary, size = 2) {
         var ary_output = [];
         if (ary === []) return ary_output;
         if (ary.length <= size) return [ary];
@@ -45,38 +41,11 @@ var convergentcompletecompact = {
             ary_output.push(chunk);
         }
         return ary_output;
-    }
-  
-  
+    },
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+ }
