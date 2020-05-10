@@ -125,6 +125,61 @@
          }  
          return ary_output;
      },
+  
+     /** 去掉一个数组的元素最外层括号
+     *  @param ary {Array} 输入的数组
+     *  @returns 返回新的数组
+     */
+    flatten: function(ary) {
+        var ary_output = [];
+        for (let i = 0; i < ary.length; i++) {
+            if (!Array.isArray(ary[i])) {
+                ary_output.push(ary[i])
+            } else {
+                for (let j = 0; j < ary[i].length; j++) {
+                    ary_output.push(ary[i][j])
+                }
+            }
+        }
+        return ary_output;
+    },
+    
+    fromPairs: function(ary) {
+        var map = {};
+        for (let i = 0; i < ary.length; i++) {
+            map[ary[i][0]] = ary[i][1];
+        }
+        return map;
+    },
+
+    /** 获取数组的第一个元素 */
+    head: function(ary) {
+        if (ary === []) return undefined;
+        return ary[0];
+    },
+
+    /** 
+     *  @param ary {Array} 检查的数组
+     *  @param value 寻找的value
+     *  @param fromIndex {Number} 开始寻找的index
+     *  @returns 目标value所在的index，如果找不不到返回-1
+     */
+     indexOf: function(ary, value, fromIndex = 0) {
+        for (let i = fromIndex; i < ary.length; i++) {
+            if (ary[i] === value) {
+                return i;
+            }
+        }
+     },
+
+     //获得一个数组除去最后一个元素的新数组
+     initial: function(ary) {
+        var ary_output = []; 
+        for (let i = 0; i < ary.length - 1; i++) {
+            ary_output.push(ary[i]);
+         }
+         return ary_output;
+     },
 
   
   
