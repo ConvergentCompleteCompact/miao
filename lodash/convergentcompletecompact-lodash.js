@@ -23,6 +23,7 @@ var ConvergentCompleteCompact = {
       return false
     }
   },
+  
   isNaN: function(val) {
     is (val !== val) {
       return true
@@ -30,4 +31,61 @@ var ConvergentCompleteCompact = {
       return false 
     }
   },
+  
+ 
+  chunk: function(ary, size = 1) {
+        var ary_output = [];
+        if (ary === []) return ary_output;
+        if (ary.length <= size) return [ary];
+       
+        for (let i = 0; i < ary.length;) {
+            let j = 0, chunk = [];
+            while (j < size) {
+                chunk.push(ary[i]);
+                i++;
+                if (i === ary.length) {
+                    ary_output.push(chunk);
+                    return ary_output;
+                }
+                j++;
+            }
+            ary_output.push(chunk);
+        }
+        return ary_output;
+    }
+    
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
