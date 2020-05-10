@@ -42,11 +42,7 @@
         return ary_output;
     },
 
-    /** 将一个数组中的错误值去掉，The values false, null, 0, "", undefined, and NaN are falsey.
-     *  @param ary {Array} 为输入的数组
-     *  @returns 一个去掉错误值的新数组
-     */
-    compact: function(ary){
+    compact: function(ary) {
         var ary_output = [];
         for (let i = 0; i < ary.length; i++) {
             if (ary[i] === 0 || ary[i] === false || ary[i] === ''
