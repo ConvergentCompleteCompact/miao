@@ -15,13 +15,12 @@
 */
 
  var convergentcompletecompact = {
-
+  
     /** Creates an array of elements split into groups the length of size.
      *  @param ary {Array} 为输入的数组
      *  @param size {Number} 为可选参数，是输出数组中每个chunk的长度（末尾不够指定长度的chunk包含剩下的元素）
      *  @returns 一个由chunks组成的新数组
      */
-   
     chunk: function(ary, size = 2) {
         var ary_output = [];
         if (ary === []) return ary_output;
@@ -43,7 +42,19 @@
         return ary_output;
     },
 
-
+    /** 将一个数组中的错误值去掉，The values false, null, 0, "", undefined, and NaN are falsey.
+     *  @param ary {Array} 为输入的数组
+     *  @returns 一个去掉错误值的新数组
+     */
+    compact: function(ary){
+        var ary_output = [];
+        for (let i = 0; i < ary.length; i++) {
+            if (ary[i] === 0 || ary[i] === false || ary[i] === ''
+                || ary[i] === null || ary[i] === undefined) {continue}
+            if (isNaN(ary[i])) {continue}
+            ary_output.push(ary[i]);
+        }
+    },
 
 
 
