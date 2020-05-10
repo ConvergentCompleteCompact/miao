@@ -16,21 +16,7 @@
 
 
 var ConvergentCompleteCompact = {
-  isNull: function(val) {
-    if (val === null) {
-      return true
-    } else {
-      return false
-    }
-  },
-  
-  isNaN: function(val) {
-    is (val !== val) {
-      return true
-    } else {
-      return false 
-    }
-  },
+
   
  
     /** Creates an array of elements split into groups the length of size.
@@ -40,7 +26,7 @@ var ConvergentCompleteCompact = {
      * 
      * 
      */
-    chunk: function(ary, size = 2) {
+    chunk: function(ary, size = 1) {
         var ary_output = [];
         if (ary === []) return ary_output;
         if (ary.length <= size) return [ary];
