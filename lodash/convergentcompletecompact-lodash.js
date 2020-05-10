@@ -53,6 +53,23 @@
         return ary_output;
     },
 
+     /** 过滤掉两个数组的交集
+     *  @param ary_check {Array} 为被检查的数组
+     *  @param ary_ref {Array} 为参照的数组   
+     *  @returns 一个新数组（由被检查数组过滤掉交集后的剩余元素组成）
+     */
+
+     difference: function(ary_check, ary_ref) {
+         for (let i = 0; i < ary_check.length; i++) {
+            for (let k in ary_ref) {
+                if (ary_check[i] === ary_ref[k]) {
+                    ary_check.splice(i,1);
+                    continue;
+                }
+            }
+        }
+        return ary_check;
+     } 
 
 
 
