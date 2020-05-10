@@ -186,7 +186,7 @@
      join: function(ary, separator) {
         var str_output = '';
         for (let i = 0; i < ary.length - 1; i++) {
-            str_output += ary[i] + separator;
+            str_output += '' + ary[i] + separator;
         }
         return str_output + ary[ary.length - 1];
      },
