@@ -86,6 +86,45 @@
         }
         return ary_output;
      }, 
+  
+     /** 切掉一个数组从末尾到指定位置的元素
+     *  @param ary {Array} 输入数组
+     *  @param n {Number} 切除部分结束的下标
+     *  @returns 处理后的新数组
+     */
+     dropRight: function(ary, n = 1) {
+        if (n === 0) return ary;
+        if (n >= ary.length) return [];
+        var ary_output = [];
+        if (n > 0 && n < ary.length) {
+            for (let i = 0; i < ary.length - n; i++) {
+                ary_output.push(ary[i]);
+            }
+        }
+        return ary_output;
+     },
+
+    /** 往数组里填充元素
+     *  @param ary {Array} 被填充的数组
+     *  @param value 填充的元素的值
+     *  @param start {Number} 填充起始位置，include
+     *  @param end {Number} 填充结束位置，exclude
+     *  @returns 处理后的新数组
+     */
+     fill: function(ary, value, start = 0, end = ary.length) {
+         if (ary === []) return ary;
+         var ary_output = [];
+         for (let i = 0; i < start; i++) {
+             ary_output.push(ary[i]);
+         }
+         if (end < ary.length) {
+             for (let i = start; i < end; i++) { ary_output.push(value);} 
+             for (let i = end; i < ary.length; i++) { ary_output.push(ary[i]);} 
+         } else {
+             for (let i = start; i < ary.length; i++) { ary_output.push(value);}
+         }  
+         return ary_output;
+     },
 
   
   
