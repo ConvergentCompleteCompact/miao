@@ -69,7 +69,33 @@
         }
         return ary_check;
      }, 
+  
+      /** 切掉一个数组从开始到指定位置的元素
+     *  @param ary {Array} 输入数组
+     *  @param n {Number} 切除部分结束的下标
+     *  @returns 处理后的新数组
+     */
+     drop: function(ary, n = 1) {
+        if (n === 0) return ary;
+        if (n >= ary.length) return [];
+        var ary_output = [];
+        if (n > 0 && n < ary.length) {
+            for (let i = n; i < ary.length; i++) {
+                ary_output.push(ary[i]);
+            }
+        }
+        return ary_output;
+     }, 
 
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
  }
