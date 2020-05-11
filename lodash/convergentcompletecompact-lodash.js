@@ -62,7 +62,7 @@
          for (let i = 0; i < ary_check.length; i++) {
             for (let args of values) {
                 for (let k in args) {
-                    if (ary_check[i] === args[k]) {
+                    if (SameValueZero(ary_check[i], args[k])) {
                         ary_check.splice(i,1);
                         continue;
                     }
