@@ -269,7 +269,6 @@
             else if (value > arr[mid]) {left = mid + 1;}
             else return mid;
          }
-         return mid;  
      },
 
 
