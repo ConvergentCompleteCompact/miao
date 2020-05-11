@@ -58,7 +58,7 @@
      *  @param ary_ref {Array} 为参照的数组   
      *  @returns 一个新数组（由被检查数组过滤掉交集后的剩余元素组成）
      */
-     difference: function(ary_check, ary_ref) {
+     difference: function(ary_check, ...values) {
          for (let i = 0; i < ary_check.length; i++) {
             for (let xi of values) {
                 for (let j in xi) {
