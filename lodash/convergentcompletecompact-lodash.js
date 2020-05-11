@@ -260,14 +260,6 @@
         return arr_mod;
      },
 
-     sortedIndex: function(arr, value) {
-         var left = 0, right = arr.length - 1; 
-         var mid = Math.floor(left + right)/2;
-         while(value <= arr[mid]) {
-            right = mid;
-         }
-
-     }，
 
   
   
