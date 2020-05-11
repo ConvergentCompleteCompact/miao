@@ -212,6 +212,14 @@
          }
          return -1;
      },
+  
+     reverse: function(ary) {
+        var ary_mod = [];
+        for (let i = ary.length - 1; i >= 0; i--) {
+            ary_mod.push(ary[i])
+        }
+        return ary_mod;
+     },
 
      nth: function(ary, n=0) {
          if (n >= 0) return ary[n];
@@ -227,6 +235,39 @@
         }
         return arr;
      },
+  
+       pullAll: function(arr, arr_remove) {
+         for (let i = 0; i < arr_remove.length; i++) {
+             for (let j = 0; j < arr.length; j++) {
+                 if (arr_remove[i] === arr[j]) 
+                    arr.splice(j, 1)
+             }
+         }
+         return arr
+     },
+
+    /** 从右往左找目标值在数组中的下标
+     *  @param ary {Array} 检查的数组
+     *  @param start {number} 起始位置
+     *  @param end {Number} 结束位置，默认末尾，不包含
+     *  @returns 目标value所在的index，如果找不不到返回-1
+     */
+     slice: function(arr, start = 0, end = arr.length){
+        var arr_mod = [];
+        for (let i = start; i < end; i++) {
+            arr_mod.push(arr[i])
+        }
+        return arr_mod;
+     },
+
+     sortedIndex: function(arr, value) {
+         var left = 0, right = arr.length - 1; 
+         var mid = Math.floor(left + right)/2;
+         while(value <= arr[mid]) {
+            right = mid;
+         }
+
+     }，
 
   
   
