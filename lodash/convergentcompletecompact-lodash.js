@@ -60,9 +60,9 @@
      */
      difference: function(ary_check, ary_ref) {
          for (let i = 0; i < ary_check.length; i++) {
-            for (let args of values) {
-                for (let k in args) {
-                    if (ary_check[i]=== args[k]) {
+            for (let xi of values) {
+                for (let j in xi) {
+                    if (ary_check[i]=== xi[j]) {
                         ary_check.splice(i,1);
                         continue;
                     }
@@ -216,7 +216,17 @@
      nth: function(ary, n=0) {
          if (n >= 0) return ary[n];
          return ary[ary.length + n];
-     }
+     },
+  
+  
+     pull: function(arr, ...values) {
+        for (let x of values) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === x) arr.splice(i,1);
+            }
+        }
+        return arr;
+     },
 
   
   
