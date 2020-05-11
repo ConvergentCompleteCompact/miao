@@ -262,13 +262,17 @@
   
   
      sortedIndex: function(arr, value) {
-         var left = 0, right = arr.length - 1; 
-         while (left <= right) {
-            var mid = Math.floor((left + right)/2);
-            if (value <= arr[mid]) {right = mid - 1;}
+         var left = 0, right = arr.length - 1 
+         while (left < right) {
+            var mid = Math.floor(left + right)/2;
+            if (value < arr[mid]) {right = mid - 1;}
             else if (value > arr[mid]) {left = mid + 1;}
+            else {
+                while(arr[mid - 1] === arr[mid]) {mid--;}
+                return mid; 
+            }
          }
-         return mid;
+        return mid 
      },
 
 
