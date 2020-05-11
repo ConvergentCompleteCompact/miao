@@ -261,19 +261,25 @@
      },
   
   
-     sortedIndex: function(arr, value) {
-         var left = 0, right = arr.length - 1 
-         while (left <= right) {
-            var mid = Math.floor((left + right)/2);
-            if (value < arr[mid]) {right = mid - 1;}
-            else if (value > arr[mid]) {left = mid + 1;}
-            else {
-                while(arr[mid - 1] === arr[mid]) {mid--;}
-                return mid; 
-            }
-         }
-        return mid 
-     },
+    sortedIndex: function(arr, value)
+    {
+        var low = 0, hi = arr.length, result = -1;
+        while (low <= hi) 
+        {   
+            let mid = Math.floor((hi - low)/2 + low)          
+            if (value === arr[mid]) {    //当数组中存在目标值的情况   
+                result = mid;
+                hi = mid - 1;
+            }      
+            else if (value > arr[mid]) 
+                low = mid + 1;
+            else hi = mid - 1                           
+        }
+        if (result === -1) 
+            return Math.max(low, hi)
+        else 
+            return result
+    },
 
 
   
