@@ -60,10 +60,12 @@
      */
      difference: function(ary_check, ary_ref) {
          for (let i = 0; i < ary_check.length; i++) {
-            for (let k in ary_ref) {
-                if (ary_check[i] === ary_ref[k]) {
-                    ary_check.splice(i,1);
-                    continue;
+            for (let args of values) {
+                for (let k in args) {
+                    if (ary_check[i] === args[k]) {
+                        ary_check.splice(i,1);
+                        continue;
+                    }
                 }
             }
         }
