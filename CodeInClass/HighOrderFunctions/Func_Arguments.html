@@ -1,14 +1,103 @@
 
 <script>
 
+//	forEach()非内置版
+	function forEach(ary, func) {
+		for(let i = 0; i < ary.length; i++) {
+			func(ary[i], i, ary)
+		}
+	}
+	
+	//对数组求和, 当引入ary和i参数，可以改变数组
+	var data = [1, 2, 3, 4, 5]
+	forEach(data, function(xi, i, ary) {
+		ary[i] = xi + 1
+	})
+	
+	
+//	map()非内置版
+	function map(ary, mapper) {
+    var ary_output = [];
+    	for (let i = 0; i < ary.length; i++) {
+        	ary_output.push(mapper(ary[i], i, ary));
+    	}
+    	return ary_output
+	}
+	
+//	filter()非内置版
+	function filter(ary, test) {
+		var ary_left = [];
+		for (let i = 0; i < ary.length; i++) {
+			if (test(ary[i])) ary_left.push(ary[i])
+		}
+		return ary_left;
+	}
+	
+//	every()非内置版
+	function every(ary, test) {
+		for (let i = 0; i < ary.length; i++) {
+			if (test(ary[i])) continue 
+			else return false
+		}
+		return true
+	}
+	
+	every(data, xi => xi >= 2)	//true
+	
+//	some()非内置版
+	function some(ary, test) {
+		for (let i = 0; i < ary.length; i++) {
+			if (test(ary[i])) return true 
+			else continue
+		}
+		return false
+	}
+
+	some(data, xi => xi > 5.5)	//true
+	
+	//使用every()实现some();使用some()实现every(). Hint:DeMorgan Law
+	function some(ary, test) {
+		
+	}
+	
+	
+	
+	
+	
+	
+	 
+/**	内置版：forEach(), map(), filter()
+	Pass the function as the first argument to it. It then invokes your function with three arguments: 
+	[the value of the array element, the index of the array element, and the array itself].	
+*/
+	
+	data.forEach(function(xi, i, ary) {
+		ary[i] = xi + 1
+	})
+// 	[2, 3, 4, 5, 6]
+
+	data.map(xi => xi*xi)
+// 	[4, 9, 16, 25, 36], 注意该数组为新数组, data依然是[2, 3, 4, 5, 6]	 
+
+	data.filter(xi => xi > 4.5)
+//  [5, 6]
 
 
-//forEach()
-function(ary, func) {
-        for(let i = 0; i < ary.length; i++) {
-            func(ary[i], i)
-        }
-    }
+/** The every() method is like the mathematical “for all” quantifier ∀: it returns true if
+ 	and only if your predicate function returns true for all elements in the array:
+
+ 	The some() method is like the mathematical “there exists” quantifier ∃: it returns
+ 	true if there exists at least one element in the array for which the predicate returns
+ 	true, and returns false if and only if the predicate returns false for all elements of
+ 	the array:
+*/
+	data.every(xi => xi > 2)	//false
+	data.every(xi => xi < 7)	//true
+	data.some(xi => xi > 5)		//true
+
+  
+  
+
   
   
   
@@ -19,12 +108,31 @@ function(ary, func) {
   
   
   
-  
-  
-  
-  
-  
-  
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
   
   
   
