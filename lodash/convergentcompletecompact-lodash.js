@@ -105,28 +105,6 @@
         }
         return ary_output;
      },
-
-    /** 往数组里填充元素
-     *  @param ary {Array} 被填充的数组
-     *  @param value 填充的元素的值
-     *  @param start {Number} 填充起始位置，include
-     *  @param end {Number} 填充结束位置，exclude
-     *  @returns 处理后的新数组
-     */
-     fill: function(ary, value, start = 0, end = ary.length) {
-         if (ary === []) return ary;
-         var ary_output = [];
-         for (let i = 0; i < start; i++) {
-             ary_output.push(ary[i]);
-         }
-         if (end < ary.length) {
-             for (let i = start; i < end; i++) { ary_output.push(value);} 
-             for (let i = end; i < ary.length; i++) { ary_output.push(ary[i]);} 
-         } else {
-             for (let i = start; i < ary.length; i++) { ary_output.push(value);}
-         }  
-         return ary_output;
-     },
   
      /** 去掉一个数组的元素最外层括号
      *  @param ary {Array} 输入的数组
@@ -281,7 +259,26 @@
             return result
     },
 
+/** 往数组里填充元素
+ *  @param ary {Array} 被填充的数组
+ *  @param value 填充的元素的值
+ *  @param start {Number} 填充起始位置，include
+ *  @param end {Number} 填充结束位置，exclude
+ *  @returns 原数组修改后的数组
+ */
 
+    fill(ary, value, start = 0, end = ary.length) {
+        if (start < 0) {	//当start参数小于0
+            start = 0
+        }
+        if (end > ary.length) {    //当end参数大于ary.length
+            end = ary.length
+        }
+        for(let i = start; i < end; i++) {
+            ary[i] = value
+        }
+        return ary
+    },
   
   
   
