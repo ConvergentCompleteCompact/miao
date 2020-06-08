@@ -165,7 +165,8 @@
   
      join: function(ary, separator) {
         var str_output = '';
-        for (let i = 0; i < ary.length - 1; i++) {
+        var i = 0
+        for (i = 0; i < ary.length - 1; i++) {
             str_output = str_output + ary[i] + separator;   //注意字符串拼接，转型
         }
         return str_output + ary[i];
