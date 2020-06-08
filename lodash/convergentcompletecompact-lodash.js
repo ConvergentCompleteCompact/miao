@@ -146,7 +146,7 @@
      */
      indexOf: function(ary, value, fromIndex = 0) {
         for (let i = fromIndex; i < ary.length; i++) {
-            if (ary[i] !== ary[i]) {
+            if (ary[i] !== ary[i]) {    //NaN的情况
                 if (value !== value) { return i;}
             }
             if (ary[i] === value) { return i;}
@@ -166,9 +166,9 @@
      join: function(ary, separator) {
         var str_output = '';
         for (let i = 0; i < ary.length - 1; i++) {
-            str_output += '' + ary[i] + separator;
+            str_output = str_output + ary[i] + separator;   //注意字符串拼接，转型
         }
-        return str_output + ary[ary.length - 1];
+        return str_output + ary[i];
      },
 
      last: function(ary) {
@@ -190,13 +190,15 @@
          }
          return -1;
      },
-  
-     reverse: function(ary) {
-        var ary_mod = [];
-        for (let i = ary.length - 1; i >= 0; i--) {
-            ary_mod.push(ary[i])
+     
+     //在原数组上进行反转, ***就地反转***
+    reverse(ary) {
+        for(let i = 0; i < Math.floor(ary.length / 2); i++) {
+            let temp = ary[i] 
+            ary[i] = ary[ary.length - 1 - i]
+            ary[ary.length - 1 - i] = temp
         }
-        return ary_mod;
+        return ary
      },
 
      nth: function(ary, n=0) {
@@ -266,7 +268,6 @@
  *  @param end {Number} 填充结束位置，exclude
  *  @returns 原数组修改后的数组
  */
-
     fill(ary, value, start = 0, end = ary.length) {
         if (start < 0) {	//当start参数小于0
             start = 0
@@ -279,7 +280,51 @@
         }
         return ary
     },
-  
+   
+ /** 获取数组的切片
+ *  @param ary {Array} 被填充的数组
+ *  @param startIdx {Number} 切片的起始位置，inclusive
+ *  @param end {Number} 切片结束位置，exclusive
+ *  @returns 数组的切片
+ */
+    slice(ary, start = 0, end = array.length) {
+        var ary_slice = []
+        for (var i = start; i < end; i++) {
+            ary_slice.push(ary[i])
+        }
+        return ary_slice
+    },
+     
+ /** concate n个数组
+ *  @param ary {Array}
+ *  @param values {Array} n个参数值组成的数组
+ *  @returns 新concatenated数组
+ */
+    concat(ary, ...values) {
+        var concatenated = []
+        //将被拼接数组元素放入新数组中
+        for(let i = 0; i < ary.length; i++) {
+            if( Array.isArray(ary[i]) ) {
+                for(let j = 0; j < ary[i].length; j++) {
+                    concatenated.push(ary[i][j])
+                }
+                continue
+            }
+            concatenated.push(ary[i])
+        }
+        //将拼接部分放入数组中
+        for(let i = 0; i < values.length; i++) {
+            if( Array.isArray(values[i]) ) {
+                for(let j = 0; j < values[i].length; j++) {
+                    concatenated.push(values[i][j])
+                }
+                continue
+            }
+            concatenated.push(values[i])
+        }
+        return concatenated
+    },
+     
   
   
   
