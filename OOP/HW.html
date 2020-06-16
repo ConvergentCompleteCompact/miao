@@ -1,1 +1,91 @@
+<script>
+/** A vector type
+    Write a constructor Vector that represents a vector in two-dimensional space. It takes x and y parameters (numbers), 
+    which it should save to properties of the same name. Give the Vector prototype two methods, plus and minus, 
+    that take another vector as a parameter and return a new vector that has the sum or difference of the two vectors’ 
+    (the one in this and the parameter) x and y values.
+    Add a getter property length to the prototype that computes the length of the vector—that is, 
+    the distance of the point (x, y) from the origin (0, 0).
+*/
 
+//将传入的x,y值（分别代表x,y坐标）存储到创建的对象上
+  function Vector(x, y) {
+    this.x = x
+    this.y = y
+  }
+  
+  //增加plus函数, 函数接收一个参数为加法运算的其中一个对象
+  Vector.prototype.plus = function(vec) { 
+    var result = new Vector()
+    result.x = this.x + vec.x
+    result.y = this.y + vec.y
+    return result
+  }
+
+   //增加minus函数，包含一个参数为减法运算符号后的对象
+  Vector.prototype.minus = function(vec) { 
+    var result = new Vector()
+    result.x = this.x - vec.x
+    result.y = this.y - vec.y
+    return result
+  }
+
+   //增加getDistance函数，包含一个参数为减法运算符号后的对象
+  Vector.prototype.getDistance = function() {
+    return Math.sqrt(this.x ** 2 + this.y ** 2)
+  }  
+
+/** Complex number 的加法，减法，乘法，除法
+
+*/
+  
+  //complex number object
+  function Complex(real, imag) {
+    this.real = real
+    this.imag = imag
+  }
+  
+  //加法
+  Complex.prototype.plus = function(complexNum) {
+    var sum = new Complex(this.real + complexNum.real, this.imag + complexNum.imag)
+    return sum
+  }
+  
+  //减法
+  Complex.prototype.minus = function(complexNum) {
+    var difference = new Complex(this.real - complexNum.real, this.imag - complexNum.imag)
+    return difference
+  }
+  
+  Complex.prototype.multiple = function(complexNum) {
+    var realMul = this.real * complexNum.real 
+    var imagMul = this.imag * complexNum.imag
+    //imaginary part
+    if (this.imag + complexNum.imag === 0) {  //虚部互为相反数
+      var result = new Complex( realMul - Math.abs(imagMul), 0 )
+      return result.real
+    } else {
+      var result = new Complex( realMul + imagMul, this.real * complexNum.imag + this.imag * complexNum.real )
+      return result
+    }
+  }
+
+  Complex.prototype.division = function(complexNum) {
+    var multiplier = new Complex(complexNum.real, - complexNum.imag)
+    var numerator = this.multiple(multiplier)
+    var denominator = complexNum.multiple(multiplier)   //返回的是一个实数
+    var result = new Complex(numerator.real / denominator, numerator.imag / denominator)
+    result.real = Number(result.real.toFixed(2))
+    result.imag = Number(result.imag.toFixed(2))
+    return result 
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<\script>
