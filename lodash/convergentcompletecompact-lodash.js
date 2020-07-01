@@ -164,7 +164,7 @@
      },
   
      join (ary, separator) {
-				if (seperator === undefined) seperator = ','
+	if (seperator === undefined) seperator = ','
         var strOutput = ''  
         for (var i = 0; i < array.length - 1; i++) {
         	if (!array[i]) array[i] = ''
