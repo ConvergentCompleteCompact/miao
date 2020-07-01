@@ -163,13 +163,15 @@
          return ary_output;
      },
   
-     join: function(ary, separator) {
-        var str_output = '';
-        var i = 0
-        for (i = 0; i < ary.length - 1; i++) {
-            str_output = str_output + ary[i] + separator;   //注意字符串拼接，转型
-        }
-        return str_output + ary[i];
+     join (ary, separator) {
+		      if (seperator === undefined) seperator = ','
+        var strOutput = ''  
+        for (var i = 0; i < array.length - 1; i++) {
+        if (!array[i]) array[i] = ''
+        strOutput = strOutput + array[i] + seperator
+      }
+        (array[i]) ? array[i] : array[i] = '';
+        return strOutput + array[i]
      },
 
      last: function(ary) {
