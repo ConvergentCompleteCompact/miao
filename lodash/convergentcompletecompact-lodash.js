@@ -164,12 +164,12 @@
      },
   
      join (ary, separator) {
-		      if (seperator === undefined) seperator = ','
+				if (seperator === undefined) seperator = ','
         var strOutput = ''  
         for (var i = 0; i < array.length - 1; i++) {
-        if (!array[i]) array[i] = ''
-        strOutput = strOutput + array[i] + seperator
-      }
+        	if (!array[i]) array[i] = ''
+        	strOutput = strOutput + array[i] + seperator
+      	}
         (array[i]) ? array[i] : array[i] = '';
         return strOutput + array[i]
      },
